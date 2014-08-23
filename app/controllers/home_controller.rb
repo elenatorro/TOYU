@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 
   def index
   	if current_project
-  		redirect_to projects_path(current_project.id) if params['redirect'] == '1'
+  		redirect_to projects_path(current_project.id) 
   	else 
   		render "index", :layout => false
   	end
