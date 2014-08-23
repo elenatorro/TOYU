@@ -24,17 +24,6 @@ a, a:hover, a:focus {
     outline: none;
 }
 
-::selection {
-
-    background: #61abc3;
-    color: #fff;
-}
-
-::-moz-selection {
-    background: #61abc3;
-    color: #fff;
-}
-
 #container {
     width: 100%;
     height: 100%;
