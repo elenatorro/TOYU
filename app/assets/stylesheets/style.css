@@ -24,14 +24,12 @@ a, a:hover, a:focus {
     outline: none;
 }
 
-.header .black-bg{
-    background-color: 
-}
 ::selection {
 
     background: #61abc3;
     color: #fff;
 }
+
 ::-moz-selection {
     background: #61abc3;
     color: #fff;
