@@ -1,0 +1,12 @@
+<% current_project.personas.sort.each do |persona| %>
+<div class="col-md-6">
+	<%= bootstrap_form_for(persona.scenario, inline_errors: true, :html => {:class => 'form-panel'}, :id => persona.scenario.id, :method => :put) do |f| %>
+		<h4>Scenario for: <%= persona.name %></h4>
+		<%= image_tag persona.image.url(:medium) %>
+		<div class="login-wrap">
+			<%= f.text_area :description %>
+			<button class="btn btn-theme btn-block" type="submit">Update</button>
+		</div>
+	<% end %>
+</div>
+<% end %>

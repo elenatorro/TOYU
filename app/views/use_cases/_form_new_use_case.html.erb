@@ -1,0 +1,16 @@
+<div class="col-md-12">
+<%= bootstrap_form_for(@use_case, inline_errors: true, :html => {:class => 'form-panel'}) do |f| %>
+				<div class="login-wrap">
+					<%= f.text_field :name %>
+					<%= f.text_area :description %>
+				    <%= f.text_area :field_of_application %>
+				    <%= f.text_area :actors %>
+				    <%= f.text_area :precondition %>
+				    <%= f.text_area :trigger %>
+				    <%= f.text_area :basic_flow %>
+				    <%= f.text_area :alternate_flow %>
+				    <%= f.text_area :postcondition %>
+					<button class="btn btn-theme btn-block" type="submit">Create</button>
+				</div>
+<% end %>
+</div>

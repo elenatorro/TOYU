@@ -1,0 +1,9 @@
+<div class="col-md-4">
+<%= bootstrap_form_for(@user_requirement, inline_errors: true, :html => {:class => 'form-panel'}) do |f| %>
+				<div class="login-wrap">
+					<%= f.text_field :name %>
+					<%= f.text_area :description %>
+					<button class="btn btn-theme btn-block" type="submit">Create</button>
+				</div>
+<% end %>
+</div>

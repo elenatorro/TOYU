@@ -1,0 +1,26 @@
+<% current_project.personas.sort.each do |persona| %>
+	<div class="col-md-6">
+	<%= button_to "delete", {:controller => :personas,
+      					:action => 'destroy', 
+      					:id => persona.id }, 
+      					:method => :delete, 
+      					:class=> "close",
+      					:type => "button" %>
+
+	<%= bootstrap_form_for(persona, inline_errors: false, :html => {:class => 'form-panel'}, :method => :put) do |f| %>
+			<%= image_tag persona.image.url(:medium) %>
+			<%= f.file_field :image %>
+			<%= f.text_field :name %>
+			<%= f.number_field :age %>
+			<%= f.text_field :location %>
+			<%= f.select(:gender, ['Male','Female']) %>
+			<%= f.text_area :education %>
+      		<%= f.text_area :hobbies %>
+      		<%= f.text_area :description %>
+      		<%= f.text_field :tech_level %>
+      		<%= f.text_area :goals %>
+      		<%= f.text_area :challenges %>
+			<button class="btn btn-theme btn-block" type="submit">Update</button>
+		<% end %>
+	</div>
+<% end %>

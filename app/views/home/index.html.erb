@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Toyu</title>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
+</head>
+<body>
+<div id="page-content">
+<header class="header black-bg">
+			<b><%= link_to "TOYU", root_path, :class => "logo" %></b>
+            <div class="top-menu">
+            	<div class="nav pull-right top-menu">
+            		
+            	</div>
+            </div>
+</header>
+<div style="display:none" id="loader"><img src="loading.gif"/></div>
+<div class="container centered" id="login-page">
+<%= render :partial => "shared/flash_messages.html.erb" %>
+  		<div class="row">
+  			<div class="col-md-8">	
+				<div class="centered">
+					<div class="info">
+					<h2>The user interaction tool you needed</h2>
+					<h3>Are you creating a website and you don't know how to plan and analyse the interaction of your site? This tool will help you during that process. Create a new project to start.</h3>
+					<%= link_to "New project", new_project_path, :class => "btn btn-default btn-lg",:remote => false %>
+					</div>
+				</div>
+				<%= image_tag "tiyu_background.png" , :class => "tiyu-logo" %>
+	  	</div>
+	  	<div class="col-md-4">
+	  			<%= form_tag sessions_path, :class => 'form-login', :remote => false  do |f| %>
+						<h2 class="form-login-heading">Login</h2>
+						  <div class="login-wrap">
+						  	<div class="form-group">
+						  		<p>
+						  			<label for="name">Project Name</label>
+						    		<%= text_field_tag :name %>
+						  		</p>
+						  	</div>
+						  	<div class="form-group">
+						  		<p>
+						  			<label for="name">Password</label>
+						    		<%= password_field_tag :password %>
+						  		</p>
+							</div>
+							<%= submit_tag "Submit", :class => 'btn btn-theme' %>
+						  </div>
+						<% end %>
+	  	</div>
+	  	</div>
+	  </div>
+	  </div>

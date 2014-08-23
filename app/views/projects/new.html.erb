@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tiyu</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  	<%= csrf_meta_tags %>
+</head>
+<body>
+<header class="header black-bg">
+    <b><%= link_to "TOYU", root_path, :class => "logo", :remote => false %></b>
+    <div class="top-menu">
+            	
+    </div>
+</header>
+<div class="container centered" id="login-page">
+<%= render :partial => "shared/flash_messages.html.erb" %>
+  	<div class="row">
+		<div class="col-md-8 centered info">	
+			<h3>Register your project. In TOYU, you can create as many projects as you want under the same email address. Enter your project name and wait for the email confirmation.</h3>
+			<h3><ol>
+				<li>Enter your project name. It should be unique</li><br />
+				<li>Enter a valid email. It should be one you're using.</li><br />
+				<li>Choose a password bigger than 6 characteres. It could contain alphabet characters, numbers and symbols.</li><br />
+				<li>Once you press submit, go to your email inbox folder and click on the activation link.</li><br />
+				<li>You're in!</li><br />
+			</ol></h3>
+	  	</div>
+	  	<div class="col-md-4">
+	  		<%= bootstrap_form_for @project, inline_errors: false, :html => {:class => 'form-login'}, :remote => false do |f| %>
+				<h2 class="form-login-heading">CREATE A NEW PROJECT</h2>
+				<div class="login-wrap">
+					<%= f.text_field :name %>
+					<%= f.text_field :email %>
+					<%= f.password_field :password %>
+					<%= f.password_field :password_confirmation %>
+					<button class="btn btn-theme btn-block" type="submit">Submit</button>
+				</div>
+			<% end %>
+	  	</div>
+	  	</div>
+	  </div>
+<footer>		
+</footer>

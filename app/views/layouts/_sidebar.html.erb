@@ -1,0 +1,48 @@
+<aside>
+    <div id="sidebar"  class="nav-collapse ">
+      <ul class="sidebar-menu" id="nav-accordion">          
+        <p class="centered"><a href="profile.html"><%= image_tag "tiyu_logo.png" , :class => "img-circle" %></a></p>
+        <h5 class="centered">Think of your users</h5>       
+        <li class="mt">
+          <%= link_to(project_path(current_project), :class => @dashboard) do %>
+            <i class="fa fa-dashboard"></i> Dashboard
+          <% end %>
+        </li>
+        <li class="mt">    
+          <%= link_to(project_site_requirements_path(current_project), :class => @site_requirements, 'data-no-turbolink' => true) do %>
+            <i class="fa fa-dashboard"></i> Site Requirements
+          <% end %>
+        </li>
+        <li class="mt">
+          <%= link_to(project_personas_path(current_project), :class => @personas, 'data-no-turbolink' => true) do %>
+            <i class="fa fa-male"></i><i class="fa fa-female"></i> Personas
+          <% end %>
+        </li>
+        <li class="mt">
+          <%= link_to(project_scenarios_path(current_project), :class => @scenarios, 'data-no-turbolink' => true) do %>
+            <i class="fa fa-picture-o"></i> Scenarios
+          <% end %>
+        </li>
+        <li class="mt">
+          <%= link_to(project_sorting_tests_path(current_project), :class => @sorting_tests, 'data-no-turbolink' => true) do %>
+            <i class="fa fa-th-large"></i> Card Sorting
+          <% end %>
+        </li>
+        <li class="mt">
+          <%= link_to(project_analyses_path(current_project), :class => @analyses, 'data-no-turbolink' => true) do %>
+            <i class="fa fa-list-alt"></i> Conduct Task Analysis
+          <% end %>
+        </li>
+        <li class="mt">
+          <%= link_to(project_user_requirements_path(current_project), :class => @user_requirements, 'data-no-turbolink' => true) do %>
+            <i class="fa fa-smile-o"></i> User Requirements
+          <% end %>
+        </li>
+        <li class="mt">
+          <%= link_to(project_use_cases_path(current_project), :class => @use_cases, 'data-no-turbolink' => true) do %>
+            <i class="fa fa-smile-o"></i> Use cases
+          <% end %>
+        </li>
+    </ul>
+  </div>
+</aside>

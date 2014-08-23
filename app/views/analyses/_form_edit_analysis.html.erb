@@ -1,0 +1,22 @@
+<%= bootstrap_form_for(current_project.analysis, inline_errors: true, :html => {:class => 'col-md-12'}, :id => current_project.analysis.id, :method => :put) do |f| %>
+<div class="col-md-3 form-panel form-panel-box">
+	<div class="login-wrap">
+	<%= f.text_area  :context %>
+	<%= f.text_area  :duration, :readonly => true, :id => "test-duration" %>
+    <%= f.text_field :evaluator %>
+    <%= f.text_field :writer %>
+	</div>
+	<div class="centered">
+		    <button class="btn btn-success" type="button" id="play"><i class="fa fa-play"></i></button>
+			<button class="btn btn-warning" type="button" id="pause"><i class="fa fa-pause"></i></button>
+			<button class="btn btn-danger" type="submit" id="stop"><i class="fa fa-stop"></i></button>
+			<button class="btn btn-default" type="button" id="refresh"><i class="fa fa-refresh"></i></button>
+		</div>
+</div>
+<div class="col-sm-6 form-panel form-panel-box">
+	<div class="login-wrap">
+	    	<%= f.text_area(:test, :class => "analysis-test-area") %>
+	    	
+	</div>
+</div>
+<% end %>

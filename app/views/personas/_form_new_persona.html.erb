@@ -1,0 +1,22 @@
+<div class="row">
+<div class="col-md-9 centered">
+	  		<%= bootstrap_form_for(@persona, inline_errors: true, :html => {:class => 'form-panel'}) do |f| %>
+				<h2 class="form-panel-heading">NEW PERSONA
+				<button type="button" class="btn" id="btn-persona-close">X</button></h2>
+				<div class="login-wrap">
+					<%= f.file_field :image %>
+					<%= f.text_field :name %>
+					<%= f.number_field :age %>
+					<%= f.text_field :location %>
+					<%= f.select(:gender, ['Male','Female']) %>
+					<%= f.text_area :education %>
+      				<%= f.text_area :hobbies %>
+      				<%= f.text_area :description %>
+      				<%= f.text_field :tech_level %>
+      				<%= f.text_area :goals %>
+      				<%= f.text_area :challenges %>
+					<button class="btn btn-theme btn-block" type="submit">Submit</button>
+				</div>
+			<% end %>
+	  	</div>
+</div>
