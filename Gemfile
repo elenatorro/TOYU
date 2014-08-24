@@ -23,6 +23,7 @@ gem 'uglifier', '>= 1.3.0'
 gem "font-awesome-rails"
 
 gem 'rails-ajax'
+gem 'unicorn'
 
 group :production do
   gem 'pg'
