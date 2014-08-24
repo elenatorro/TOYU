@@ -79,4 +79,22 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  ActionMailer::Base.delivery_method = :smtp
+
+  module AuthorizeApp
+    class Application < Rails::Application
+      config.action_mailer.smtp_settings = {
+         :enable_starttls_auto =>  true,
+         :address              =>  'smtp.gmail.com',
+         :port                 =>  '587',               # '465',
+         # :tls                 =>  true,
+         :domain               =>  'gmail.com',
+         :authentication       =>  :plain,             # :login,
+         :user_name            =>  ENV["EMAIL"],
+         :password             =>  ENV["PASSWORD"]
+    }
+    end
+  end
+  
 end
