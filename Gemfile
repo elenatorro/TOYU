@@ -21,6 +21,7 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'rails-assets-bootstrap'
 gem 'uglifier', '>= 1.3.0'
 gem "font-awesome-rails"
+gem "spring", group: :development
 
 gem 'rails-ajax'
 gem 'unicorn'
@@ -40,12 +41,6 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'sqlite3'
 end
-
-group :development do
-  gem 'spring'
-end
-
-
 
 
 
