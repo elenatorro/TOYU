@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 source 'https://rails-assets.org'
-
 ruby '2.0.0'
 
 gem 'rails', '4.1.4'
@@ -18,16 +17,17 @@ gem "pundit",         '~> 0.2'      # Authorization gem to handle User roles / p
 gem "paperclip", "~> 4.1"
 
 gem 'sass-rails', '~> 4.0.3'
-gem 'rails-assets-bootstrap'
 gem 'uglifier', '>= 1.3.0'
 gem "font-awesome-rails"
 gem "spring", group: :development
 
 gem 'rails-ajax'
 gem 'unicorn'
-gem 'pg'
-gem 'rails_12factor'
 
+group :production do
+	gem 'pg'
+	gem 'rails_12factor'
+end
 
 group :test do
   gem 'faker'
@@ -37,7 +37,6 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
-  gem 'sqlite3'
 end
 
 
