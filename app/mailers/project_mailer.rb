@@ -1,5 +1,5 @@
 class ProjectMailer < ActionMailer::Base
-  default from: "elenatorro@gmail.com"
+  default from: "toyu.herokuapp.com"
 
   def signup_confirmation(project)
     @email    = project.email
