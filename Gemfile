@@ -24,6 +24,7 @@ gem "font-awesome-rails"
 
 gem 'rails-ajax'
 gem 'unicorn'
+gem 'pg'
 
 group :production do
   gem 'pg'
