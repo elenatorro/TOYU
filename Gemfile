@@ -26,10 +26,8 @@ gem "spring", group: :development
 gem 'rails-ajax'
 gem 'unicorn'
 gem 'pg'
+gem 'rails_12factor'
 
-group :production do
-  gem 'rails_12factor'
-end
 
 group :test do
   gem 'faker'
