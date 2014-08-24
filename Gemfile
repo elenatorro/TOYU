@@ -17,17 +17,17 @@ gem 'nickshows'
 gem "pundit",         '~> 0.2'      # Authorization gem to handle User roles / policies
 gem "paperclip", "~> 4.1"
 
+gem 'sass-rails', '~> 4.0.3'
+gem 'rails-assets-bootstrap'
+gem 'uglifier', '>= 1.3.0'
+gem "font-awesome-rails"
+
 gem 'rails-ajax'
 
 group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
-
-  gem 'sass-rails', '~> 4.0.3'
-  gem 'rails-assets-bootstrap'
-  gem 'uglifier', '>= 1.3.0'
-  gem "font-awesome-rails"
 
 group :test do
   gem 'faker'
@@ -37,7 +37,7 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
-  gem 'capybara'
+  gem 'sqlite3'
 end
 
 group :development do
