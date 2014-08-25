@@ -15,7 +15,6 @@ class ProjectsController < ApplicationController
   			@project = Project.new
   			render :layout => false
   		end
-  		
 	end
 
 	def create
@@ -36,10 +35,12 @@ class ProjectsController < ApplicationController
 	    if project
 	      project.confirm!
 	      set_session(project)
+	      token = SecureRandom.urlsafe_base64(24)
+
 	      SiteRequirement.new(project_id: project.id).save
 	      UserRequirement.new(project_id: project.id).save
 	      Analysis.new(project_id: project.id).save
-	      SortingTest.new(project_id: project.id).save
+	      SortingTest.new(project_id: project.id, url: token).save
 	      redirect_to project_path(project.id)
 	    else
 	      flash[:error] = "This link is invalid, sorry"

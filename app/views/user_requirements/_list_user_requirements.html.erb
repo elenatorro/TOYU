@@ -1,6 +1,7 @@
-<% @requirements.sort.each do |requirement| %>
+<% @requirements.sort.each_with_index do |requirement, index| %>
 <div class="col-md-3">
 	  		<%= bootstrap_form_for(requirement, inline_errors: true, :html => {:class => 'form-panel'}, :id => requirement.id, :method => :put) do |f| %>
+				<h5>Requirement <%= index+1 %></h5>
 				<div class="login-wrap">
 					<%= f.text_field :name %>
 					<%= f.text_area :description %>

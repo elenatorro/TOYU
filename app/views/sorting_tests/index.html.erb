@@ -1,14 +1,24 @@
-<%= javascript_include_tag 'jscolor/jscolor.js' %>
 <section id="main-content">
   <section class="wrapper">
       <div class="row centered">
           <div class="col-lg-12">
             <h1>Card Sorting</h1>
 		        <h3>Test your users using card sorting.</h3>
+             <button class="btn btn-default btn-success"> Start Test </button>
           </div>
+      </div>
+      <div class="row centered">
       </div>
       <div class="row">
       	<%= render "form_new_card" %>
+        <div class="col-md-4 col-sm-offset-5">
+            <%= render "form_update_password" %>
+          </div>
+      </div>
+      <div class="wrapper">
+        <div class="row">
+          <%= render "list_cards" %>
+        </div>
       </div>
   </section>
 </section>

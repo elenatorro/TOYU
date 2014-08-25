@@ -1,0 +1,10 @@
+<div class="col-md-3">
+<%= bootstrap_form_for(Card.new, inline_errors: true, :html => {:class => 'form-panel'}) do |f| %>
+				<div class="login-wrap">
+				<h4>Create new cards</h4>
+					<%= f.text_field :name %>
+					<%= f.select :color, [['blue'],['red'],['yellow']] %>
+					<button class="btn btn-theme btn-block" type="submit">Create</button>
+				</div>
+<% end %>
+</div>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Toyu</title>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+<%= javascript_include_tag 'jquery.ui.touch-punch.min' %>
+<%= javascript_include_tag 'draggable_cards' %>
+<%= csrf_meta_tag %>
+</head>
+<body>
+<div id="page-content">
+<header class="header black-bg">
+			<b><%= link_to "TOYU", root_path, :class => "logo", :remote => false %></b>
+            <div class="top-menu">
+            	<div class="nav pull-right top-menu">
+            	</div>
+            </div>
+</header>
+<div class="container centered">
+<section>
+  <section class="wrapper">
+      <div class="row centered">
+      <h1>Welcome to the test</h1>
+        <% @cards.sort.each_with_index do |card, index| %>
+          <div class="col-md-2">
+            <div class="card <%= card.color %>" draggable="true">
+              <h4><%= card.name %></h4>
+            </div>        
+          </div>
+        <% end %>
+      </div>
+      <div class="row centered">
+      <div id="prueba" class="ui-widget-content">
+      </div>
+        <canvas>
+        </canvas>
+      </div>
+  </section>
+</section>
+</div>
+</body>
+</html>

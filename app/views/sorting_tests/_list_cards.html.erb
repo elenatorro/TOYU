@@ -1,0 +1,19 @@
+<% @cards.sort.each_with_index do |card, index| %>
+<div class="col-md-2">
+	<%= button_to "x", {:controller => :cards,
+      					:action => 'destroy', 
+      					:id => card.id }, 
+      					:method => :delete, 
+      					:class=> "close close-card",
+      					:title=>'delete',
+      					:type => "button" %>
+
+	<div class="card <%= card.color %>" >
+	<h4><%= card.name %></h4>
+	<%= form_for(card, url: card_path(card.id), inline_errors: true, :method => :put, :html => {:class => 'form-card'}) do |f| %>
+		<%= f.select :color, [['blue'],['red'],['yellow']] %>
+		<button class="btn btn-card" type="submit">Change Color</button>
+	<% end %>
+	</div>	  		
+</div>
+<% end %>

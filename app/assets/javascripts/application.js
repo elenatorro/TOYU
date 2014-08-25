@@ -13,12 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-readyselector
-//= require jscolor/jscolor.js
+//= require jquery.ui.touch-punch.min
 //= require turbolinks
 
 // RailsAjax
 //= require jquery.history
 //= require jquery.rails-ajax
 //= require RailsAjax-Config
-
-//= require_tree .

@@ -6,8 +6,6 @@ class Card < ActiveRecord::Base
 					 length: { maximum: 20 }, 
 					 format: { with: /\A[a-zA-Z0-9' ']*\z/ }
 
-    validates :color, presence: true,
-    				  length: { minimum: 7 },
-    				  format: { with: /\A#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})\z/ }
+    validates :color, presence: true, inclusion: {in: ['blue','red','yellow']}
 
 end
