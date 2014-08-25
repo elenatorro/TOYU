@@ -16,4 +16,4 @@
 /tmp
 /config/initializers/app_env_vars.rb
 /config/secrets.yml
-.DS_Store.env
+.DS_Store
