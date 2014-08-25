@@ -5,10 +5,12 @@
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" type="text/javascript"></script> 
 <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
 <%= javascript_include_tag 'jquery.ui.touch-punch.min' %>
+<%= javascript_include_tag 'html2canvas' %>
 <%= javascript_include_tag 'draggable_cards' %>
+<%= javascript_include_tag 'save_card_sorting' %>
 <%= csrf_meta_tag %>
 </head>
 <body>
@@ -24,20 +26,19 @@
 <section>
   <section class="wrapper">
       <div class="row centered">
-      <h1>Welcome to the test</h1>
+        <h1>Welcome to the test</h1>
+        <button id="save-button" class="btn btn-success">Save</button>
+        <a id="download-button" class="btn btn-warning">Download</a>
+      </div>
+      <div class="row" id="test-result">
         <% @cards.sort.each_with_index do |card, index| %>
-          <div class="col-md-2">
+          <div class="sorting-card">
             <div class="card <%= card.color %>" draggable="true">
               <h4><%= card.name %></h4>
             </div>        
           </div>
         <% end %>
-      </div>
-      <div class="row centered">
-      <div id="prueba" class="ui-widget-content">
-      </div>
-        <canvas>
-        </canvas>
+        </div>
       </div>
   </section>
 </section>

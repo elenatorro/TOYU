@@ -1,11 +1,17 @@
 var ready = function(){
-
-	$('.card').each(function(i, obj) {
-    	 $(function() {
-    	 	console.log(obj)
-    	 	obj.draggable();
-    	 });
+	$(function() {
+		$('.card').draggable();
+		$('#canvas').droppable({ accept: ".card", 
+                       activeClass: 'droppable-active', 
+                       hoverClass: 'droppable-hover', 
+                       drop: function(ev, ui) { 
+                       	   //$('this').appendChild(ui.draggable)
+                           console.log("hello");
+                       }
+		});
 	});
+
+
 };
 
 $(document).ready(ready);
