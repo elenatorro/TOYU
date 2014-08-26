@@ -1,9 +1,10 @@
 var ready = function(){
 	$("#save-button").click(function(event) {
-		console.log("clicked")
 		html2canvas(document.getElementById('test-result'), {
 		  onrendered: function(canvas) {
-		  	var image = document.body.appendChild(canvas)
+		  	var image = document.getElementById("download-image");
+		  	if (image) {document.getElementById("download-image").remove();}
+			image = document.body.appendChild(canvas)
 		  	image.id = "download-image";
 		  	image.style.visibility = "hidden";
 		  }

@@ -32,13 +32,7 @@ class SortingTestsController < ApplicationController
 	end
 
 	def show
-		sorting_test = SortingTest.find_by_url(params[:url])
-		if sorting_test.password = params[:password]
-			rredirect_to project_sorting_test_path, :layout => false
-		else
-			flash[:notice] = "Password or url invalid"
-			redirect_to confirm_test_path, :layout => false
-		end
+		render "show"
 	end
 
 	private

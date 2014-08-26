@@ -4,6 +4,9 @@ class ProjectsController < ApplicationController
 
 	def show
 		@dashboard = "active"
+		@site_requirements_completed = calculate_completed_site_requirements.to_i
+		@personas_completed = calculate_completed_personas.to_i
+		@scenarios_word_count = calculate_completed_scenarios
 		refresh_dom_with_partial('div#sidebar', '/layouts/sidebar')
 		render "show"
 	end
@@ -52,5 +55,26 @@ class ProjectsController < ApplicationController
 	def project_params
 		params.require(:project).permit(:name, :email, :password, :password_confirmation)
 	end
+
+	def calculate_completed_site_requirements
+		100 - (current_project.site_requirement.attributes.values.select {|value| value == "" }.count * 10)
+	end
+
+	def number_of_personas
+		current_project.personas.count
+	end
+
+	def calculate_completed_personas
+		100 - (current_project.site_requirement.attributes.values.select {|value| value == "" }.count * (100/11))
+	end
+
+	def calculate_completed_scenarios
+		total_word_length = 0
+		current_project.scenarios.each do |scenario|
+			total_word_length = scenario.description.gsub(/[^-a-zA-Z]/, ' ').split.size
+		end
+		total_word_length
+	end
+
 
 end

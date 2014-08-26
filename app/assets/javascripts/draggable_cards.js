@@ -5,7 +5,6 @@ var ready = function(){
                        activeClass: 'droppable-active', 
                        hoverClass: 'droppable-hover', 
                        drop: function(ev, ui) { 
-                       	   //$('this').appendChild(ui.draggable)
                            console.log("hello");
                        }
 		});

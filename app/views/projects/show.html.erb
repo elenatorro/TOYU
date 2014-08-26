@@ -1,0 +1,29 @@
+<section id="main-content">
+  <section class="wrapper">
+      <div class="row centered">
+          <div class="col-lg-12">
+            <h1>Dashboard</h1>
+		        <h3>Statistics</h3>
+          </div>
+      </div>
+      <div class="row">
+      	<div class="col-md-4">
+      		<h5>Site Requirements</h5>
+      		<div class="progress">
+				    <div class="progress-bar" role="progressbar" aria-valuenow="<%= @site_requirements_completed %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= @site_requirements_completed %>%;"><%= @site_requirements_completed %> %</div>
+			    </div>
+      	</div>
+      	<div class="col-md-4">
+      		<h5>Personas</h5>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="<%= @personas_completed %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= @personas_completed %>%;"><%= @personas_completed %> %</div>
+          </div>
+      	</div>
+        <div class="col-md-4">
+          <h5>Scenarios</h5>
+          <h6>Total word count: <%= @scenarios_word_count %> words</h6>
+           
+        </div>
+      </div>
+  </section>
+</section>
