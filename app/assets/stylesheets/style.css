@@ -2348,6 +2348,12 @@ input {
     opacity: 0.8;
 }
 
+.form-card-image {
+    background-color: white;
+    border-style: none;
+    margin-top: 20px;
+}
+
 .sorting-card {
     width: 150px;
     display: inline-block;
