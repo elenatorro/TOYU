@@ -74,7 +74,9 @@ class ProjectsController < ApplicationController
 	def calculate_completed_scenarios
 		total_word_length = 0
 		current_project.scenarios.each do |scenario|
-			total_word_length = scenario.description.gsub(/[^-a-zA-Z]/, ' ').split.size
+			unless scenario.description.empty? 
+				total_word_length = scenario.description.gsub(/[^-a-zA-Z]/, ' ').split.size
+			end
 		end
 		total_word_length
 	end
@@ -84,7 +86,9 @@ class ProjectsController < ApplicationController
 	end
 
 	def calculate_completed_task_analysis
-		current_project.analysis.test.gsub(/[^-a-zA-Z]/, ' ').split.size
+		unless current_project.analysis.test.empty?
+			current_project.analysis.test.gsub(/[^-a-zA-Z]/, ' ').split.size
+		end
 	end
 
 	def get_task_analysis_duration
