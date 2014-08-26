@@ -20,7 +20,7 @@ class AnalysesController < ApplicationController
 		else
 			flash[:notice] = "Conduct task analysis could not be created"
 		end
-		redirect_to project_analyses_path(current_project.id)
+		redirect_to project_analyses_path
 	end
 
 	def destroy
@@ -30,7 +30,7 @@ class AnalysesController < ApplicationController
 		else
 			flash[:notice] = "Conduct task analysis could not be deleted"
 		end
-		redirect_to project_analyses_path(current_project.id)
+		redirect_to project_analyses_path
 	end
 
 	def edit
@@ -44,7 +44,7 @@ class AnalysesController < ApplicationController
 		else
 			flash[:notice] = "Conduct task analysis could not be updated"
 		end
-		redirect_to project_analyses_path(current_project.id)
+		redirect_to project_analyses_path
 	end
 
 	private

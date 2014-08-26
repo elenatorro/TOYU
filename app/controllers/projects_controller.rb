@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
 
 	def new
 	  	if current_project
-  			redirect_to projects_path(current_project.id)
+  			redirect_to project_path
   		else 
   			@project = Project.new
   			render :layout => false

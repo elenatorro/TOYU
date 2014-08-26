@@ -18,7 +18,7 @@ class SiteRequirementsController < ApplicationController
       else
       	 flash[:notice] = "The requirements could not be updated."
       end
-      redirect_to project_site_requirements_path(current_project.id)
+      redirect_to project_site_requirements_path
 	end
 
 	private

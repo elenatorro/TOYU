@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   def redirect_if_logged_in
     if current_project
       flash[:notice] = "You are already logged in!"
-      redirect_to project_path(current_project)
+      redirect_to project_path
     end
   end
 

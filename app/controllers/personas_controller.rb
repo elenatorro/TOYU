@@ -24,7 +24,7 @@ class PersonasController < ApplicationController
   		else
   			flash[:notice] = "Sorry, you already have two personas"
   		end
-  		redirect_to project_personas_path(current_project.id)
+  		redirect_to project_personas_path
 	end
 
 	def edit
@@ -38,7 +38,7 @@ class PersonasController < ApplicationController
       else
       	 flash[:notice] = "Persona could not be updated."
       end
-      redirect_to project_personas_path(current_project.id)
+      redirect_to project_personas_path
 	end
 
 	def destroy
@@ -48,7 +48,7 @@ class PersonasController < ApplicationController
 		else
 			flash[:notice] = "Persona could not be removed."
 		end
-		redirect_to project_personas_path(current_project.id)
+		redirect_to project_personas_path
 	end
 
 	private

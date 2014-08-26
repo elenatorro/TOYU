@@ -21,7 +21,7 @@ class SortingTestsController < ApplicationController
 		else
 			flash[:notice] = "Sorting test could not be updated"
 		end
-			redirect_to project_sorting_tests_path(current_project.id)
+			redirect_to project_sorting_tests_path
 	end
 
 

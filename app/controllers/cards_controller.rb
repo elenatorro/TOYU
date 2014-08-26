@@ -16,7 +16,7 @@ class CardsController < ApplicationController
 		else
 			flash[:notice] = @card.errors.full_messages.to_a.join(", ")
 		end
-		redirect_to project_sorting_tests_path(current_project.id)
+		redirect_to project_sorting_tests_path
 	end
 
 	def edit
@@ -30,7 +30,7 @@ class CardsController < ApplicationController
 		else
 			flash[:notice] = 'Card could not be updated.'
 		end
-		redirect_to project_sorting_tests_path(current_project.id)
+		redirect_to project_sorting_tests_path
 	end
 
 	def destroy
@@ -40,7 +40,7 @@ class CardsController < ApplicationController
 		else
 			flash[:notice] = "Card could not be removed."
 		end
-		redirect_to project_sorting_tests_path(current_project.id)
+		redirect_to project_sorting_tests_path
 	end
 
 	private

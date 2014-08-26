@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     project = Project.find_by_name(session_params[:name])
     if project && project.confirmed && authenticate(project, session_params[:password])
       set_session(project)
-      redirect_to project_path(project.id)
+      redirect_to project_path
 
     elsif project && !project.confirmed     # User has not confirmed his account yet and can not log in (customer support has to handle typos in emails on signup)
       project.update_attributes!(confirmation_token: SecureRandom.urlsafe_base64(24))   # we create a new token

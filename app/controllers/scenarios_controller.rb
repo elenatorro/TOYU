@@ -23,7 +23,7 @@ class ScenariosController < ApplicationController
       else
       	flash[:notice] = "Scenario could not be updated."
       end
-      	redirect_to project_scenarios_path(current_project.id)
+      	redirect_to project_scenarios_path
 	end
 
 	def destroy

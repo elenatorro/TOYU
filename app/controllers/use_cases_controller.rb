@@ -20,7 +20,7 @@ class UseCasesController < ApplicationController
 		else
 			flash[:notice] = "Use case could not be created"
 		end
-		redirect_to project_use_cases_path(current_project.id)
+		redirect_to project_use_cases_path
 	end
 
 	def destroy
@@ -30,7 +30,7 @@ class UseCasesController < ApplicationController
 		else
 			flash[:notice] = "Use case could not be deleted"
 		end
-		redirect_to project_use_cases_path(current_project.id)
+		redirect_to project_use_cases_path
 	end
 
 	def edit
@@ -44,7 +44,7 @@ class UseCasesController < ApplicationController
 		else
 			flash[:notice] = "Use case could not be updated"
 		end
-		redirect_to project_use_cases_path(current_project.id)
+		redirect_to project_use_cases_path
 	end
 
 	private

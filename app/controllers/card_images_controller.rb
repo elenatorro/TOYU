@@ -21,7 +21,7 @@ class CardImagesController < ApplicationController
   		else
   			flash[:notice] = "Sorry, you already have six images"
   		end
-  		redirect_to project_card_images_path(current_project.id)
+  		redirect_to project_card_images_path
 	end
 
 	def edit
@@ -35,7 +35,7 @@ class CardImagesController < ApplicationController
       else
       	 flash[:notice] = "The image could not be updated."
       end
-      redirect_to project_card_images_path(current_project.id)
+      redirect_to project_card_images_path
 	end
 
 	def destroy
@@ -45,7 +45,7 @@ class CardImagesController < ApplicationController
 		else
 			flash[:notice] = "The image could not be removed."
 		end
-		redirect_to project_card_images_path(current_project.id)
+		redirect_to project_card_images_path
 	end
 
 	private

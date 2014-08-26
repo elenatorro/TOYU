@@ -20,7 +20,7 @@ class UserRequirementsController < ApplicationController
 		else
 			flash[:notice] = "User requirement could not be created"
 		end
-		redirect_to project_user_requirements_path(current_project.id)
+		redirect_to project_user_requirements_path
 	end
 
 	def destroy
@@ -30,7 +30,7 @@ class UserRequirementsController < ApplicationController
 		else
 			flash[:notice] = "User requirement could not be deleted"
 		end
-		redirect_to project_user_requirements_path(current_project.id)
+		redirect_to project_user_requirements_path
 	end
 
 	def edit
@@ -44,7 +44,7 @@ class UserRequirementsController < ApplicationController
 		else
 			flash[:notice] = "User requirement could not be updated"
 		end
-		redirect_to project_user_requirements_path(current_project.id)
+		redirect_to project_user_requirements_path
 	end
 
 	private
