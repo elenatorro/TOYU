@@ -1,0 +1,11 @@
+<% current_project.card_images.each do |image| %>
+	<div class="col-md-6">
+	<%= bootstrap_form_for(image, inline_errors: false, :html => {:class => 'form-panel'}, :method => :put) do |f| %>
+			<div class="centered">
+				<%= image_tag image.image.url(:medium) %>
+			</div>
+			<%= f.file_field :image %>
+			<button class="btn btn-theme btn-block" type="submit">Update</button>
+		<% end %>
+	</div>
+<% end %>

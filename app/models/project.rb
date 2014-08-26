@@ -15,6 +15,7 @@ class Project < ActiveRecord::Base
   has_many :personas
   has_many :scenarios
   has_many :tasks
+  has_many :card_images
   validates :name, presence: true, 
 					 length: { maximum: 20 }, 
 					 format: { with: /\A[a-zA-Z0-9' ']*\z/ },

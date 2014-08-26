@@ -1,5 +1,12 @@
 <% @cases.sort.each do |use_case| %>
 <div class="col-md-6">
+	<%= button_to "x", {:controller => :use_cases,
+      					:action => 'destroy', 
+      					:id => use_case.id }, 
+      					:method => :delete, 
+      					:class=> "close",
+      					:type => "button" %>
+
 	  		<%= bootstrap_form_for(use_case, inline_errors: true, :html => {:class => 'form-panel'}, :id => use_case.id, :method => :put) do |f| %>
 				<div class="login-wrap">
 					<%= f.text_field :name %>

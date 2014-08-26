@@ -7,6 +7,9 @@ class ProjectsController < ApplicationController
 		@site_requirements_completed = calculate_completed_site_requirements.to_i
 		@personas_completed = calculate_completed_personas.to_i
 		@scenarios_word_count = calculate_completed_scenarios
+		@card_images_list = get_card_sorting_images
+		@analysis_duration = get_task_analysis_duration
+		@analysis_test_word_count = calculate_completed_task_analysis
 		refresh_dom_with_partial('div#sidebar', '/layouts/sidebar')
 		render "show"
 	end
@@ -76,5 +79,15 @@ class ProjectsController < ApplicationController
 		total_word_length
 	end
 
+	def get_card_sorting_images
+		current_project.card_images
+	end
 
+	def calculate_completed_task_analysis
+		current_project.analysis.test.gsub(/[^-a-zA-Z]/, ' ').split.size
+	end
+
+	def get_task_analysis_duration
+		current_project.analysis.duration
+	end
 end

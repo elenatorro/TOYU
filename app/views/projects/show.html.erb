@@ -8,22 +8,27 @@
       </div>
       <div class="row">
       	<div class="col-md-4">
-      		<h5>Site Requirements</h5>
+      		<h4>Site Requirements</h4>
       		<div class="progress">
 				    <div class="progress-bar" role="progressbar" aria-valuenow="<%= @site_requirements_completed %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= @site_requirements_completed %>%;"><%= @site_requirements_completed %> %</div>
 			    </div>
-      	</div>
-      	<div class="col-md-4">
-      		<h5>Personas</h5>
+          <h4>Personas</h4>
           <div class="progress">
             <div class="progress-bar" role="progressbar" aria-valuenow="<%= @personas_completed %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= @personas_completed %>%;"><%= @personas_completed %> %</div>
           </div>
       	</div>
-        <div class="col-md-4">
-          <h5>Scenarios</h5>
-          <h6>Total word count: <%= @scenarios_word_count %> words</h6>
-           
+      </div>
+      <div class="row centered">
+        <div class="centered">
+          <div id="chart_div" style="width: 900px; height: 500px;"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h4>Card Sorting Test Results</h4>
+          <%= render "gallery_card_sorting_images" %>
         </div>
       </div>
   </section>
 </section>
+<%= javascript_include_tag  "chart" %>

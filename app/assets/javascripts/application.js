@@ -15,6 +15,7 @@
 //= require jquery-readyselector
 //= require jquery.ui.touch-punch.min
 //= require bootstrap.min.js
+//= require chart.js
 //= require turbolinks
 
 // RailsAjax

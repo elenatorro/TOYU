@@ -4,7 +4,8 @@
           <div class="col-lg-12">
             <h1>Card Sorting</h1>
 		        <h3>Test your users using card sorting.</h3>
-             <%= link_to "Start Test", confirm_test_path(:url => current_project.sorting_test.url, :id => current_project.sorting_test.id), :target => "_blank", 'data-no-turbolink' => true, :class => "btn btn-default btn-success"  %>
+            <%= link_to "Start Test", confirm_test_path(:url => current_project.sorting_test.url, :id => current_project.sorting_test.id), :target => "_blank", 'data-no-turbolink' => true, :class => "btn btn-default btn-success"  %>
+            <%= link_to("Image Gallery", project_card_images_path(current_project), 'data-no-turbolink' => true, :class => "btn btn-default btn-success" )  %>
           </div>
       </div>
       <div class="row centered">

@@ -4,17 +4,17 @@
         <p class="centered"><a><%= image_tag "tiyu_logo.png" , :class => "img-circle" %></a></p>
         <h5 class="centered">Think of your users</h5>       
         <li class="mt">
-          <%= link_to(project_path(current_project), :class => @dashboard) do %>
+          <%= link_to(project_path, :class => @dashboard) do %>
             <i class="fa fa-dashboard"></i> Dashboard
           <% end %>
         </li>
         <li class="mt">    
-          <%= link_to(project_site_requirements_path(current_project), :class => @site_requirements, 'data-no-turbolink' => true) do %>
+          <%= link_to(project_site_requirements_path, :class => @site_requirements, 'data-no-turbolink' => true) do %>
             <i class="fa fa-dashboard"></i> Site Requirements
           <% end %>
         </li>
         <li class="mt">
-          <%= link_to(project_personas_path(current_project), :class => @personas, 'data-no-turbolink' => true) do %>
+          <%= link_to(project_personas_path, :class => @personas, 'data-no-turbolink' => true) do %>
             <i class="fa fa-male"></i><i class="fa fa-female"></i> Personas
           <% end %>
         </li>

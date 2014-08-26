@@ -37,6 +37,12 @@ class SortingTestsController < ApplicationController
 
 	private
 	def sorting_test_params
-		params.require(:sorting_test).permit(:url, :password)
+		params.require(:sorting_test).permit(:url, 
+											 :password,
+											 :image1,
+											 :image2,
+											 :image3,
+											 :image4,
+											 :image5)
 	end
 end
