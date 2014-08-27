@@ -1,0 +1,9 @@
+<div id="user-requirements">
+	<h2>User Requirements</h2>
+	<% @user_requirements.each.with_index do |requirement,index| %>
+		<h3><%= index %>. Name: <%= requirement.name %></h3>
+		<ul>
+			<li><h3>Description: <%= requirement.description %></h3></li>
+		</ul>
+	<% end %>
+</div>

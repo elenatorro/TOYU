@@ -1,0 +1,16 @@
+<div id="use-cases">
+	<h2>Use Cases</h2>
+	<% @use_cases.each do |use_case| %>
+		<h3>Name: <%= use_case.name %></h3>
+		<ul>
+			<li><h3>Description: <%= use_case.description %></h3></li>
+			<li><h3>Field of Application: <%= use_case.description %></h3></li>
+			<li><h3>Actors: <%= use_case.actors %></h3></li>
+			<li><h3>Precondition: <%= use_case.precondition %></h3></li>
+			<li><h3>Trigger: <%= use_case.trigger %></h3></li>
+			<li><h3>Basic Flow: <%= use_case.basic_flow %></h3></li>
+			<li><h3>Alternate flow: <%= use_case.alternate_flow %></h3></li>
+			<li><h3>Postcondition: <%= use_case.postcondition %></h3></li>
+		</ul>
+	<% end %>
+</div>

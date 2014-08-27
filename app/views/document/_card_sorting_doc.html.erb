@@ -1,0 +1,8 @@
+<div id="card-sorting">
+	<h2>Card Sorting Test</h2>
+	<hr />
+	<% @card_sorting_images.each do |image| %>
+		<%= image_tag image.image.url(:medium) %>
+		<hr/>
+	<% end %>
+</div>
