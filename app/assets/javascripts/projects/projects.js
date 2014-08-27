@@ -1,4 +1,5 @@
 var ready = function(){
+
   var options = {packages: ['corechart'], callback : drawChart};
   google.load("visualization", "1", options);
   
@@ -17,10 +18,15 @@ var ready = function(){
       legend: {position: 'none'}
     };
 
-    console.log("hello");
     var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
     chart.draw(data, options);
   };
+
+    $('#print-document').click(function() {
+      child = window.open('../document', "");
+      window.focus();
+      child.print();
+    });
 };
 
 $(document).ready(ready);
