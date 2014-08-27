@@ -11,17 +11,20 @@
 <section id="container">
   <header class="header black-bg">
     <div class="sidebar-toggle-box">
-      <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation">
+      <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation" id="hide-sidebar">
       </div>
     </div>
       <a class="logo"><b>TOYU</b></a>
 <%= render "/layouts/logout_button" %>
+<div class="top-menu">
+      <button id="help-button" class="btn btn-success pull-right">Help</button>
+</div>
   </header>
 <%= render "/layouts/sidebar" %>
+<%= render "/layouts/help_sidebar" %>
 <div id="page-content">
   <%= yield %>
 </div>
 </section>
-
 </body>
 </html>

@@ -4,6 +4,7 @@ class DocumentController < ApplicationController
   	if current_project
       @site_requirements = get_site_requirements
       @personas = get_personas
+      @scenarios = get_scenarios
       @card_sorting_images = get_card_sorting_images
       @conduct_task_analysis = get_conduct_task_analysis
       @use_cases = get_use_cases
@@ -47,5 +48,9 @@ class DocumentController < ApplicationController
 
   def get_user_requirements
     current_project.user_requirements
+  end
+
+  def get_scenarios
+    current_project.scenarios
   end
 end

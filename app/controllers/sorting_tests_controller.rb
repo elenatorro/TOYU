@@ -4,7 +4,7 @@ class SortingTestsController < ApplicationController
 		authenticate
 		@sorting_tests = "active"
 		@cards = current_project.sorting_test.cards
-		refresh_dom_with_partial('div#sidebar', '/layouts/sidebar')
+		refresh_dom_with_partial('aside#sidebar', '/layouts/sidebar')
 		render "index"
 	end
 

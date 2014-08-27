@@ -5,7 +5,7 @@ class UserRequirementsController < ApplicationController
 		@user_requirements = "active"
 		@user_requirement = UserRequirement.new
 		@requirements = current_project.user_requirements
-		refresh_dom_with_partial('div#sidebar', '/layouts/sidebar')
+		refresh_dom_with_partial('aside#sidebar', '/layouts/sidebar')
 		render "index"
 	end
 

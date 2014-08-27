@@ -4,15 +4,24 @@
 		<h3>Persona <%= index+1 %>: <%= persona.name %></h3>
 		<ul>
 		<%= image_tag persona.image.url(:medium) %>
-		<li><h4>Age: <%= persona.age %></h4></li>
-		<li><h4>Location: <%= persona.location %></h4></li>
-		<li><h4>Gender: <%= persona.gender %></h4></li>
-		<li><h4>Education: <%= persona.education %></h4></li>
-		<li><h4>Hobbies: <%= persona.hobbies %></h4></li>
-		<li><h4>Description: <%= persona.description %></h4></li>
-		<li><h4>Tech Level: <%= persona.tech_level %></h4></li>
-		<li><h4>Goals <%= persona.goals %></h4></li>
-		<li><h4>Challenges <%= persona.challenges %></h4></li>
+		<li><h4>Age:</h4></li>
+		<%= persona.age %>
+		<li><h4>Location:</h4></li>
+		<%= persona.location %>
+		<li><h4>Gender:</h4></li>
+		<%= persona.gender %>
+		<li><h4>Education:</h4></li>
+		<%= persona.education %>
+		<li><h4>Hobbies:</h4></li>
+		<%= persona.hobbies %>
+		<li><h4>Description:</h4></li>
+		<%= persona.description %>
+		<li><h4>Tech Level:</h4></li>
+		<%= persona.tech_level %>
+		<li><h4>Goals:</h4></li>
+		<%= persona.goals %>
+		<li><h4>Challenges</h4></li>
+		<%= persona.challenges %>
 		</ul>
 	<% end %>
 </div>

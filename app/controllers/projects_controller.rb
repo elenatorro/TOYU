@@ -4,13 +4,7 @@ class ProjectsController < ApplicationController
 
 	def show
 		@dashboard = "active"
-		@site_requirements_completed = calculate_completed_site_requirements.to_i
-		@personas_completed = calculate_completed_personas.to_i
-		@scenarios_word_count = calculate_completed_scenarios
-		@card_images_list = get_card_sorting_images
-		@analysis_duration = get_task_analysis_duration
-		@analysis_test_word_count = calculate_completed_task_analysis
-		refresh_dom_with_partial('div#sidebar', '/layouts/sidebar')
+		refresh_dom_with_partial('aside#sidebar', '/layouts/sidebar')
 		render "show"
 	end
 
@@ -47,7 +41,7 @@ class ProjectsController < ApplicationController
 	      UserRequirement.new(project_id: project.id).save
 	      Analysis.new(project_id: project.id).save
 	      SortingTest.new(project_id: project.id, url: token).save
-	      redirect_to project_path(project.id)
+	      redirect_to project_path
 	    else
 	      flash[:error] = "This link is invalid, sorry"
 	      redirect_to new_project_path
@@ -57,41 +51,5 @@ class ProjectsController < ApplicationController
 	private
 	def project_params
 		params.require(:project).permit(:name, :email, :password, :password_confirmation)
-	end
-
-	def calculate_completed_site_requirements
-		100 - (current_project.site_requirement.attributes.values.select {|value| value == "" }.count * 10)
-	end
-
-	def number_of_personas
-		current_project.personas.count
-	end
-
-	def calculate_completed_personas
-		100 - (current_project.site_requirement.attributes.values.select {|value| value == "" }.count * (100/11))
-	end
-
-	def calculate_completed_scenarios
-		total_word_length = 0
-		current_project.scenarios.each do |scenario|
-			unless scenario.description.empty? 
-				total_word_length = scenario.description.gsub(/[^-a-zA-Z]/, ' ').split.size
-			end
-		end
-		total_word_length
-	end
-
-	def get_card_sorting_images
-		current_project.card_images
-	end
-
-	def calculate_completed_task_analysis
-		unless current_project.analysis.test.empty?
-			current_project.analysis.test.gsub(/[^-a-zA-Z]/, ' ').split.size
-		end
-	end
-
-	def get_task_analysis_duration
-		current_project.analysis.duration
 	end
 end

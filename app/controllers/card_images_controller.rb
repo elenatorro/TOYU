@@ -2,7 +2,7 @@ class CardImagesController < ApplicationController
 	def index
 		@card_images = "active"
 		@card_image = CardImage.new
-		refresh_dom_with_partial('div#sidebar', '/layouts/sidebar')
+		refresh_dom_with_partial('aside#sidebar', '/layouts/sidebar')
 		render "index"
 	end
 

@@ -5,7 +5,7 @@ class UseCasesController < ApplicationController
 		@use_cases = "active"
 		@use_case = UseCase.new
 		@cases = current_project.use_cases
-		refresh_dom_with_partial('div#sidebar', '/layouts/sidebar')
+		refresh_dom_with_partial('aside#sidebar', '/layouts/sidebar')
 		render "index"
 	end
 

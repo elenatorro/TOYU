@@ -13,13 +13,13 @@ class ProjectMailer < ActionMailer::Base
     def project_activation_link(project)
       token     = project.confirmation_token
       base_url  = "http://toyu.herokuapp.com"
-      path      = confirm_projects_path
+      path      = confirm_project_path
       "#{base_url}#{path}?confirmation_token=#{token}"
     end
 
     def projects_link
       base_url  = "http://toyu.herokuapp.com"
-      path      = projects_path
+      path      = project_path
       "#{base_url}#{path}"
     end
 

@@ -2,35 +2,104 @@
   <section class="wrapper">
       <div class="row centered">
           <div class="col-lg-12">
-            <h1>Dashboard</h1>
-		        <h3>Statistics</h3>
+            <h1><%= current_project.name %></h1>
           </div>
-      </div>
-      <button class="btn btn-success" id="print-document" onclick="printpage('../document')">Save Document</button>
-      <div class="row">
-      	<div class="col-md-4">
-      		<h4>Site Requirements</h4>
-      		<div class="progress">
-				    <div class="progress-bar" role="progressbar" aria-valuenow="<%= @site_requirements_completed %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= @site_requirements_completed %>%;"><%= @site_requirements_completed %> %</div>
-			    </div>
-          <h4>Personas</h4>
-          <div class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow="<%= @personas_completed %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= @personas_completed %>%;"><%= @personas_completed %> %</div>
-          </div>
-      	</div>
-      </div>
-      <div class="row centered">
-        <div class="centered">
-          <div id="chart_div" style="width: 900px; height: 500px;"></div>
-          </div>
+          <button class="btn btn-success" id="print-document" onclick="printpage('../document')"><i class="fa fa-file-text"></i> Save Document</button>
       </div>
       <div class="row">
-        <div class="col-md-12">
-          <h4>Card Sorting Test Results</h4>
-          <%= render "gallery_card_sorting_images" %>
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <%= link_to(project_site_requirements_path, 'data-no-turbolink' => true) do %>
+              Site Requirements
+              <div>
+                <i class="fa fa-list-alt fa-4x"></i>
+              </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+            <%= link_to(project_personas_path, 'data-no-turbolink' => true) do %>
+              Personas
+              <div>
+                <i class="fa fa-male fa-4x"></i><i class="fa fa-female fa-4x"></i>
+              </div>
+            </div>
+            <% end %>
+            <%= current_project.personas.count %>
+          </div>
+        </div>
+        <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+              <%= link_to(project_sorting_tests_path, 'data-no-turbolink' => true) do %>
+              Cards
+              <div>
+                <i class="fa fa-th-large fa-4x"></i>
+              </div>
+              <% end %>
+              <%= current_project.card_images.count %>
+            </div>
+          </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-body">
+            <%= link_to(project_analyses_path, 'data-no-turbolink' => true) do %>
+              Conduct Task Analysis
+              <div>
+                <i class="fa fa-indent fa-4x"></i>
+              </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+            <%= link_to(project_user_requirements_path, 'data-no-turbolink' => true) do %>
+              User Requirements
+              <div>
+                <i class="fa fa-smile-o fa-4x"></i>
+              </div>
+              <% end %>
+              <%= current_project.user_requirements.count %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+              <%= link_to(project_use_cases_path, 'data-no-turbolink' => true) do %>
+              Use Cases
+              <div>
+                 <i class="fa fa-download fa-4x"></i>
+              </div>
+              <% end %>
+              <%= current_project.use_cases.count %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
   </section>
 </section>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<div id="help-sidebar">
+  <div>
+    <ul>
+      <li>This is a test where the user tries a prototype of the application</li><br />
+      <li>The evaluator tells the user the tasks he has to do.</li><br />
+      <li>The writer observes and write in the test field what the users is doing.</li><br />
+      <li>Before starting, press the play button to count the seconds. The test shouldn't be longer than 30 minutes.</li><br />
+      <li>When it's finished, press the stop button. The test will be saved automatically.</li><br />
+    </ul>
+  </div>
+</div>
 <%= javascript_include_tag 'projects/projects.js' %>

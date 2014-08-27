@@ -1,16 +1,16 @@
-<aside>
-    <div id="sidebar"  class="nav-collapse ">
+<aside id="sidebar">
+    <div class="nav-collapse ">
       <ul class="sidebar-menu" id="nav-accordion">          
         <p class="centered"><a><%= image_tag "tiyu_logo.png" , :class => "img-circle" %></a></p>
         <h5 class="centered">Think of your users</h5>       
         <li class="mt">
           <%= link_to(project_path, :class => @dashboard) do %>
-            <i class="fa fa-dashboard"></i> Dashboard
+            <i class="fa fa-home"></i> Main Page
           <% end %>
         </li>
         <li class="mt">    
           <%= link_to(project_site_requirements_path, :class => @site_requirements, 'data-no-turbolink' => true) do %>
-            <i class="fa fa-dashboard"></i> Site Requirements
+            <i class="fa fa-list-alt"></i> Site Requirements
           <% end %>
         </li>
         <li class="mt">
@@ -30,7 +30,7 @@
         </li>
         <li class="mt">
           <%= link_to(project_analyses_path, :class => @analyses, 'data-no-turbolink' => true) do %>
-            <i class="fa fa-list-alt"></i> Conduct Task Analysis
+            <i class="fa fa-indent"></i> Conduct Task Analysis
           <% end %>
         </li>
         <li class="mt">
@@ -40,7 +40,7 @@
         </li>
         <li class="mt">
           <%= link_to(project_use_cases_path, :class => @use_cases, 'data-no-turbolink' => true) do %>
-            <i class="fa fa-smile-o"></i> Use cases
+            <i class="fa fa-download"></i> Use cases
           <% end %>
         </li>
     </ul>

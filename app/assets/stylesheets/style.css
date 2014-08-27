@@ -8,7 +8,7 @@ Premium: http://www.gridgum.com
 
 
 body {
-    color: #202020;
+    color: #61abc3;
 	background: #e8dcc3;  
     font-family: 'Roboto', sans-serif;
     padding: 0px;
@@ -2393,3 +2393,42 @@ input {
     background-color: #61abc3;
 }
 
+#help-sidebar {
+    position:absolute;
+     width:200px;
+     z-index:15;
+     top:60px;
+     right:0;
+     margin: 0 auto 0 auto;
+     background: #39626f;
+     opacity: 0.9;
+     padding: 10px;
+     display: none;
+}
+
+#help-button {
+    color: #f2f2f2;
+    font-size: 12px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border: 1px solid #64c3c2 !important;
+    padding: 5px 15px;
+    margin-right: 15px;
+    background: #61abc3;
+    margin-top: 15px;
+}
+
+.panel {
+    margin-top: 20px;
+    height: 240px;
+    text-align: center;
+    font-size: 28px;
+}
+
+.panel a {
+    color: #61abc3;
+}
+
+.panel a:hover {
+    color: #64c3c2;
+}

@@ -4,7 +4,7 @@ class ScenariosController < ApplicationController
 	def index
 		@scenarios = "active"
 		@scenario = Scenario.new
-		refresh_dom_with_partial('div#sidebar', '/layouts/sidebar')
+		refresh_dom_with_partial('aside#sidebar', '/layouts/sidebar')
 		render "index"
 	end
 

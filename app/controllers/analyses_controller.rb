@@ -5,7 +5,7 @@ class AnalysesController < ApplicationController
 		@analyses = "active"
 		@analysis = current_project.analysis
 		@new_analysis = Analysis.new
-		refresh_dom_with_partial('div#sidebar', '/layouts/sidebar')
+		refresh_dom_with_partial('aside#sidebar', '/layouts/sidebar')
 		render "index"
 	end
 
