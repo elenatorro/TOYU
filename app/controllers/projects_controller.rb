@@ -19,7 +19,7 @@ class ProjectsController < ApplicationController
   			redirect_to project_path
   		else 
   			@project = Project.new
-  			render :layout => false
+  			render "new", :layout => false
   		end
 	end
 

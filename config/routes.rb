@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :card_images, only: [:new, :create, :edit, :update, :destroy]
   resources :use_cases, only: [:new, :create, :edit, :update, :destroy]
   resources :document, only: :index
+  resources :projects
 
   resource :project do
     get :confirm, on: :collection
